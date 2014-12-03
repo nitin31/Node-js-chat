@@ -17,7 +17,49 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
-<body>
+<body style="background-color: #1F4D45">
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Node JS Chat Client</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id = "username">anonymous</a></li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Enter Nickname</h4>
+                </div>
+                <div class="modal-body">
+                    <!--<form action="" id="nickSubmit">-->
+                        Nickname: <input autofocus id="nicknameInput" autocomplete="off" />
+                        <button id="nicknameButton">Save</button>
+                    <!--</form>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="messages"></div>
+    </div>
+
+    <div>
+        <a id="typingUser"  style="margin-left:10px;color:black; bottom: 0; position: fixed; margin-bottom:50px;"></a>
+    </div>
+
+    <form action="" id="submit">
+        <input id="m" autocomplete="off" /><button id="msgButton">Send</button>
+    </form>
+
 	
 </body>
 </html>
