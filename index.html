@@ -108,28 +108,7 @@
         }
     });
 
-    socket.on('istyping',function(typingUser){
-        if(typingUser!="anonymous"){
-            var userlist = $('#typingUser').html();
-            userlist = userlist.replace(" ...","");
-            if (userlist == ""){
-                $('#typingUser').html(typingUser + " ...");
-            } else {
-                var tempUsers = userlist.replace(" ","");
-                var users = tempUsers.split(",");
-                if (users.indexOf(typingUser)<0){
-                    userlist = userlist + ", " + typingUser;
-                    $('#typingUser').html(userlist + " ...");
-                }
-            }
-        }
-    });
-
-    socket.on('stoptyping',function(typingUser){
-//        alert("hi");
-        var userlist =
-        $('#typingUser').html(typingUser + " ...");
-    });
+    
     </script>
 </body>
 </html>
