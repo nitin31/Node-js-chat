@@ -97,6 +97,18 @@
         $('#myModal').modal('toggle');
         return false;
     });
+
+    socket.on('chat message',function(msg){
+        var splitContent = msg.split(" : ");
+        var len = (msg.length+2)*11;
+        var displayMsg = '<b>' + splitContent[0] + '</b> : ' + splitContent[1];
+        if (splitContent[0] == $('#username').html()){
+            $('#messages').append($('<li>').addClass("selfmessage").addClass("messagebox").attr("id","messageelement").width(len).html(displayMsg)).append('</div');
+        }
+        else{
+            $('#messages').append($('<li>').addClass("messagebox").width(len).html(displayMsg));
+        }
+    });
     </script>
 </body>
 </html>
