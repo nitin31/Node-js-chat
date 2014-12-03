@@ -83,6 +83,20 @@
         $('#m').val('');
         return false;
     });
+
+    $('#m').focus(function(){
+        socket.emit('typing', $('#username').html())
+    });
+
+    $('#m').blur(function(){
+       socket.emit('stoppedtyping',$('#username').html());
+    });
+
+    $('#nicknameButton').click(function(){
+        $('#username').html($('#nicknameInput').val());
+        $('#myModal').modal('toggle');
+        return false;
+    });
     </script>
 </body>
 </html>
