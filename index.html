@@ -71,6 +71,18 @@
         <input id="m" autocomplete="off" /><button id="msgButton">Send</button>
     </form>
 
-	
+	<script>
+    var socket = io();
+    $('#submit').submit(function(){
+        if ($('#username').html() == '')
+        {
+            $('#username').html('anonymous');
+        }
+        var msg =  $('#username').html()+" : " + $('#m').val();
+        socket.emit('chat message',msg);
+        $('#m').val('');
+        return false;
+    });
+    </script>
 </body>
 </html>
