@@ -3,11 +3,13 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.set('port', (process.env.PORT || 5000));
+
 
 app.get('/', function(request, response) {
   response.sendFile('index.html', {"root": __dirname});
 });
+
+app.set('port', (process.env.PORT || 3000));
 
 io.on('connection', function(socket){
   console.log('a user connected');
