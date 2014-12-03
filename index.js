@@ -24,5 +24,5 @@ io.on('connection', function(socket){
   });
 });
 
-app.listen(app.get('port'));
+http.listen(app.get('port'));
 
