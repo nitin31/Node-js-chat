@@ -128,8 +128,8 @@
     socket.on('stoptyping',function(typingUser){
 //        alert("hi");
         var userlist = $('#typingUser').html();
-        userlist = userlist.replace(" ..."," ,");
- 		userlist = userlist.replace(typingUser+" ,", "")
+        userlist = userlist.replace(" ...",",");
+ 		userlist = userlist.replace(typingUser+",", "")
  		if (userlist == ""){
  			$('#typingUser').html("");
  		} 
