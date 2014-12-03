@@ -124,6 +124,19 @@
             }
         }
     });
+
+    socket.on('stoptyping',function(typingUser){
+//        alert("hi");
+        var userlist = $('#typingUser').html();
+        userlist = userlist.replace(" ..."," ,");
+ 		userlist = userlist.replace(typingUser+" ,", "")
+ 		if (userlist == ""){
+ 			$('#typingUser').html("");
+ 		} else {
+ 			userlist = userlist.substring(0.userlist.length()-1);
+        	$('#typingUser').html(userlist + " ...");
+ 		}
+    });
     </script>
 </body>
 </html>

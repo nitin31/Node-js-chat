@@ -26,10 +26,9 @@ io.on('connection', function(socket){
     console.log(typingUser);
     io.emit('istyping', typingUser);
   });
-  // socket.on('stoppedtyping', function(user){
-  //   console.log(user);
-  //   io.emit('stoptyping', typingUser);
-  // });
+  socket.on('stoppedtyping', function(user){
+    io.emit('stoptyping', typingUser);
+  });
 });
 
 http.listen(app.get('port'));
