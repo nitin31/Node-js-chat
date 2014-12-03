@@ -111,15 +111,15 @@
     socket.on('istyping',function(typingUser){
         if(typingUser!="anonymous"){
             var userlist = $('#typingUser').html();
-            userlist = userlist.replace(" ...","");
+            userlist = userlist.replace("...","");
             if (userlist == ""){
                 $('#typingUser').html(typingUser + " ...");
             } else {
                 var tempUsers = userlist.replace(" ","");
                 var users = tempUsers.split(",");
                 if (users.indexOf(typingUser)<0){
-                    userlist = userlist + ", " + typingUser;
-                    $('#typingUser').html(userlist + " ...");
+                    userlist = userlist + "," + typingUser;
+                    $('#typingUser').html(userlist + "...");
                 }
             }
         }
@@ -128,14 +128,14 @@
     socket.on('stoptyping',function(typingUser){
 //        alert("hi");
         var userlist = $('#typingUser').html();
-        userlist = userlist.replace(" ...",",");
- 		userlist = userlist.replace(typingUser+",", "")
+        userlist = userlist.replace("...",",");
+ 		userlist = userlist.replace(typingUser+",","")
  		if (userlist == ""){
  			$('#typingUser').html("");
  		} 
  		else {
  			userlist = userlist.substring(0,userlist.length()-1);
-        	$('#typingUser').html(userlist + " ...");
+        	$('#typingUser').html(userlist + "...");
  		}
     });
     </script>
