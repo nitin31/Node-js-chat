@@ -102,9 +102,11 @@
         var displayMsg = '<b>' + splitContent[0] + '</b> : ' + splitContent[1];
         if (splitContent[0] == $('#username').html()){
             $('#messages').append($('<li>').addClass("selfmessage").addClass("messagebox").attr("id","messageelement").width(len).html(displayMsg)).append('</div');
+            $("#messages").scrollTop($("#messages").prop('scrollHeight'));
         }
         else{
             $('#messages').append($('<li>').addClass("messagebox").width(len).html(displayMsg));
+            $("#messages").scrollTop($("#messages").prop('scrollHeight'));
         }
     });
 
