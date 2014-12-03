@@ -26,7 +26,7 @@ io.on('connection', function(socket){
     console.log(typingUser);
     io.emit('istyping', typingUser);
   });
-  socket.on('stoppedtyping', function(user){
+  socket.on('stoppedtyping', function(typingUser){
     io.emit('stoptyping', typingUser);
   });
 });
